@@ -60,9 +60,9 @@ class HotelTableViewController: UITableViewController {
         cell.descriptionLabel.text = hotel.description
         
         //Set the font style
-        cell.nameLabel.font = UIFont.preferredFont(forTextStyle: .headline)
-        cell.addressLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        cell.descriptionLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        cell.nameLabel.font = UIFont.preferredCustomFont(forTextStyle: .headline)
+        cell.addressLabel.font = UIFont.preferredCustomFont(forTextStyle: .subheadline)
+        cell.descriptionLabel.font = UIFont.preferredCustomFont(forTextStyle: .body)
 
         return cell
     }
@@ -72,3 +72,43 @@ class HotelTableViewController: UITableViewController {
     }
 
 }
+
+extension UIFont {
+    
+    class func preferredCustomFont(forTextStyle textStyle: UIFontTextStyle) -> UIFont {
+        let font = UIFontDescriptor.preferredFontDescriptor(withTextStyle: textStyle)
+        let fontSize: CGFloat = font.pointSize
+        //Default font for body style
+        var customFont = UIFont(name: "Avenir-Light", size: fontSize)!
+        switch textStyle {
+        case .headline:
+            customFont = UIFont(name: "AvenirNext-Medium", size: fontSize)!
+        case .subheadline:
+            customFont = UIFont(name: "Avenir-Medium", size: fontSize)!
+        default:
+            break
+        }
+        return customFont
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
