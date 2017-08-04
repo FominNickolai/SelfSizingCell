@@ -24,6 +24,13 @@ class HotelTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 95.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        //Listen to changes of text
+        NotificationCenter.default.addObserver(self, selector: #selector(onTextSizeChange(notification:)), name: .UIContentSizeCategoryDidChange, object: nil)
+    }
+    
+    func onTextSizeChange(notification: NSNotification) {
+        tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,10 +58,17 @@ class HotelTableViewController: UITableViewController {
         cell.nameLabel.text = hotel.name
         cell.addressLabel.text = hotel.address
         cell.descriptionLabel.text = hotel.description
+        
+        //Set the font style
+        cell.nameLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        cell.addressLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        cell.descriptionLabel.font = UIFont.preferredFont(forTextStyle: .body)
 
         return cell
     }
     
-
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
 }
