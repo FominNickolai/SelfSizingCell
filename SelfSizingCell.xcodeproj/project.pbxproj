@@ -99,6 +99,7 @@
 				TargetAttributes = {
 					F44809781DBE15CA0083B681 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = X3563PB3YJ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -264,6 +265,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X3563PB3YJ;
 				INFOPLIST_FILE = SelfSizingCell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.SelfSizingCell;
@@ -276,6 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X3563PB3YJ;
 				INFOPLIST_FILE = SelfSizingCell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.SelfSizingCell;
@@ -303,6 +306,7 @@
 				F448098D1DBE15CA0083B681 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
